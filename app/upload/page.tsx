@@ -1,9 +1,9 @@
 "use client";
 
-import { uploadSpreadsheet } from "@/lib/api";
+import { checkApiHealth, uploadSpreadsheet } from "@/lib/api";
 import { STORAGE_KEY } from "@/lib/types";
 import { useRouter } from "next/navigation";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const ACCEPT = ".xlsx,.xls,.csv";
 
@@ -14,6 +14,11 @@ export default function UploadPage() {
   const [dragOver, setDragOver] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [apiOnline, setApiOnline] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    checkApiHealth().then(setApiOnline);
+  }, []);
 
   const pickFile = useCallback((next: File | null) => {
     if (!next) {
@@ -63,6 +68,17 @@ export default function UploadPage() {
       <p className="mb-6 text-xs text-gray-500">
         Drop a workbook or browse to begin analysis.
       </p>
+
+      {apiOnline === false && (
+        <p
+          className="mb-4 border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-xs text-amber-200"
+          role="status"
+        >
+          Processing API is offline. In a second terminal run{" "}
+          <code className="text-amber-100">npm run dev:backend</code>, or use{" "}
+          <code className="text-amber-100">npm run dev:all</code> to start both.
+        </p>
+      )}
 
       <div
         onDragOver={(e) => {

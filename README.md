@@ -26,7 +26,16 @@ npm install
 npm run dev
 ```
 
+### Both at once (recommended)
+
+```bash
+npm install
+npm run dev:all
+```
+
 Open [http://localhost:3000](http://localhost:3000). Upload routes proxy `/api/upload` to the FastAPI service via `next.config.ts`.
+
+> **Note:** `npm run dev` alone only starts Next.js. Uploads will fail with a 500 until the API is running on port 8000 (`npm run dev:backend`).
 
 ## Flow
 
