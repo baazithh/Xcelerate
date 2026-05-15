@@ -10,8 +10,22 @@ export async function uploadSpreadsheet(file: File): Promise<UploadResponse> {
   });
 
   if (!response.ok) {
-    const detail = await response.text();
-    throw new Error(detail || `Upload failed (${response.status})`);
+    let detail = `Upload failed (${response.status})`;
+    const text = await response.text();
+    if (text) {
+      try {
+        const body = JSON.parse(text) as {
+          detail?: string | { msg?: string }[];
+        };
+        if (typeof body.detail === "string") detail = body.detail;
+        else if (Array.isArray(body.detail)) {
+          detail = body.detail.map((d) => d.msg ?? String(d)).join("; ");
+        }
+      } catch {
+        detail = text;
+      }
+    }
+    throw new Error(detail);
   }
 
   return response.json() as Promise<UploadResponse>;

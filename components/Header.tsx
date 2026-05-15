@@ -15,7 +15,7 @@ export default function Header() {
           </Link>
           <span className="hidden h-4 w-px bg-gray-700 sm:block" aria-hidden />
           <span className="hidden truncate text-[10px] font-medium uppercase tracking-[0.2em] text-gray-500 sm:block">
-            Dynamic Spreadsheet Intelligence
+            DYNAMIC SPREADSHEET INTELLIGENCE
           </span>
         </div>
         <nav className="flex shrink-0 items-center gap-4 text-xs text-gray-400">
