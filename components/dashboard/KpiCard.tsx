@@ -4,10 +4,9 @@ interface KpiCardProps {
   label: string;
   value: string;
   delta: number;
-  currency?: boolean;
 }
 
-export default function KpiCard({ label, value, delta, currency }: KpiCardProps) {
+export default function KpiCard({ label, value, delta }: KpiCardProps) {
   const { text, positive } = formatDelta(delta);
 
   return (

@@ -23,7 +23,7 @@ export default function TimeSeriesChart({
   onPointClick,
 }: TimeSeriesChartProps) {
   return (
-    <motion className="h-64 w-full">
+    <div className="h-64 w-full">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           data={data}
@@ -108,16 +108,6 @@ export default function TimeSeriesChart({
           />
         </AreaChart>
       </ResponsiveContainer>
-    </motion>
+    </div>
   );
-}
-
-function motion({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) {
-  return <motion className={className}>{children}</motion>;
 }

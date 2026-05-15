@@ -1,0 +1,13 @@
+Report generated 2024-01-01,,,,,
+,,,,,
+Date,Status,Amount,Customer,Reference
+2024-01-05,completed,1250.50,Acme Corp,INV-1001
+2024-01-08,pending,890.00,Beta LLC,INV-1002
+2024-01-12,failed,320.75,Gamma Inc,INV-1003
+2024-01-15,completed,2100.00,Delta Co,INV-1004
+2024-01-18,completed,450.25,Epsilon Ltd,INV-1005
+2024-01-22,pending,1750.00,Acme Corp,INV-1006
+2024-01-25,completed,980.00,Beta LLC,INV-1007
+2024-01-28,failed,150.00,Gamma Inc,INV-1008
+2024-02-01,completed,3200.00,Delta Co,INV-1009
+2024-02-05,pending,640.50,Epsilon Ltd,INV-1010
