@@ -113,7 +113,6 @@ export default function DataGrid({
             className="border border-gray-700 bg-surface px-2 py-1 text-xs text-gray-200 placeholder:text-gray-600 focus:border-cyan-500/50 focus:outline-none"
           />
         </div>
-        </div>
       </div>
 
       <div className="overflow-x-auto">
