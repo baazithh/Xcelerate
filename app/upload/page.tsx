@@ -104,7 +104,7 @@ export default function UploadPage() {
             <span className="truncate text-xs text-cyan-400/90">{file.name}</span>
           )}
         </div>
-      </motion>
+      </div>
 
       {error && (
         <p className="mt-3 text-xs text-red-400" role="alert">
